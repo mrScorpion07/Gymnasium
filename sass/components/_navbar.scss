@@ -1,0 +1,113 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*========================================================
+                    NavBar Part Start
+==========================================================*/
+.main_menu {
+    height: 50px;
+    background: rgba(53, 53, 53, 0.25);
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 100%;
+    z-index: 999;
+
+    &.menu_fix {
+        position: fixed;
+        left: 0;
+        top: 5px;
+        width: 100%;
+        z-index: 99;
+        background: rgba(53, 53, 53, 0.8);
+    }
+
+    .navbar-brand {
+        width: 246px;
+        height: 70px;
+        background: #313131;
+        text-align: center;
+        line-height: 60px;
+        transform: skew(-40deg);
+        position: relative;
+
+        &::after {
+            @include after_tl(0, 0, 4px, 100%, #000);
+        }
+
+        &::before {
+            @include after_tr(0, 0, 4px, 100%, #000);
+        }
+
+        img {
+            transform: skew(40deg);
+        }
+    }
+
+    ul {
+        li {
+            a {
+                @include fs(#f1f1f1, 14px, 400, $ows);
+                text-transform: uppercase;
+                padding: 0 10px;
+                line-height: 50px;
+                transition: all linear .3s;
+                position: relative;
+
+                &:hover {
+                    color: $pera;
+                    background: #ffffff;
+
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+
+                &::after {
+                    @include after_bl(0, 0, 100%, 3px, $hover);
+                    transform: scaleX(0);
+                    transition: all linear .3s;
+                }
+
+                // .active {
+                //     background: #ffffff;
+                //     color: $pera;
+
+                //     &::after {
+                //         width: 100%;
+                //     }
+                // }
+            }
+        }
+    }
+}
+
+.main_menu ul li  .active{
+    background: white;
+    color: $pera;
+}
+
+.main_menu ul li .active::after{
+    transform: scale(1);
+}
+
+.bc_top {
+    width: 40px;
+    height: 40px;
+    background: $hover;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
+    display: none;
+}
+
+/*========================================================
+                    NavBar Part End
+==========================================================*/

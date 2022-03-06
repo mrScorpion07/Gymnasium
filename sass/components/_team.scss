@@ -1,0 +1,142 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*========================================================
+                    Team Part Start
+==========================================================*/
+#team {
+    padding-bottom: 80px;
+
+    .team_head {
+        padding-bottom: 45px;
+
+        h2 {
+            @include fs($head, 22px, 400, $ows);
+            text-transform: uppercase;
+        }
+    }
+
+    .team_img {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            transition: all linear .3s;
+        }
+
+        .overly {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 10px;
+            bottom: 10px;
+            background: rgba(226, 62, 56, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            transition: all linear .3s;
+            transform: scale(0);
+
+            ul {
+                position: absolute;
+                left: 90%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                li {
+                    padding-bottom: 15px;
+
+                    a {
+                        width: 36px;
+                        height: 36px;
+                        border: 1px solid white;
+                        text-align: center;
+                        line-height: 30px;
+                        color: white;
+                        font-size: 20px;
+                        font-weight: 500;
+                        transition: all linear .3s;
+
+                        &:hover {
+                            background: white;
+                            color: #1da0f2;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .team_text {
+        // border: 1px solid #dddddd;
+        // border-top: none;
+        padding: 20px 15px;
+        box-shadow: 0 0 5px 1px rgb(221, 221, 221);
+        transition: all linear .3s;
+
+        #typed {
+            @include fs($head, 14px, 400, $ows);
+            text-transform: uppercase;
+            padding-bottom: 8px
+        }
+
+        #typedd {
+            @include fs($head, 14px, 400, $ows);
+            text-transform: uppercase;
+            padding-bottom: 8px
+        }
+
+        .element {
+            @include fs($head, 14px, 400, $ows);
+            text-transform: uppercase;
+            padding-bottom: 8px
+        }
+
+        .elementt {
+            @include fs($head, 14px, 400, $ows);
+            text-transform: uppercase;
+            padding-bottom: 8px
+        }
+
+        h4 {
+            @include fs($pera, 14px, 400, $ows);
+            padding-bottom: 13px
+        }
+
+        p {
+            @include fs($pera, 13px, 400, $opn);
+            line-height: 18px;
+            transform: scale(0);
+            transition: all linear .3s;
+        }
+
+    }
+
+    .box {
+        transition: all linear .3s;
+
+        &:hover .overly {
+            transform: scale(1);
+        }
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+
+        &:hover .team_text {
+            box-shadow: 0 0 10px 3px rgb(177, 169, 169);
+        }
+        &:hover {
+            .team_text p{
+                transform: scale(1);
+            }
+        }
+        &:hover {
+            transform: translateY(-42px);
+        }
+    }
+
+}
+/*========================================================
+                    Team Part End
+==========================================================*/

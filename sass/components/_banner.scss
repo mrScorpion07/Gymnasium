@@ -1,0 +1,138 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*========================================================
+                    Banner Part Start
+==========================================================*/
+#banner {
+    .slider {
+        .banner_item {
+            padding: 254px 0 117px;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                @include after_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.6));
+                z-index: -1;
+            }
+
+            .banner_text {
+                h2 {
+                    @include fs(#ffffff, 30px, 700, $ows);
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    &::after {
+                        @include after_tl(18px, 0, 210px, 3px, $hover);
+                        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+                    }
+
+                    &::before {
+                        @include after_tr(18px, 0, 164px, 3px, $hover);
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+                    }
+                }
+
+                h1 {
+                    @include fs(#e23e38, 60px, 700, $ows);
+                    text-transform: uppercase;
+                    margin-bottom: 16px;
+                    position: relative;
+
+                    &::after {
+                        @include after_tl(-25px, 0, 3px, 213px, $hover);
+                    }
+
+                    &::before {
+                        @include after_tr(-25px, 0, 3px, 213px, $hover);
+                    }
+                }
+
+                p {
+                    @include fs(#dddddd, 13px, 400, $opn);
+                    line-height: 18px;
+                    position: relative;
+
+                    &::after {
+                        @include after_bl(-66px, 0, 111px, 3px, $hover);
+                    }
+                    &::before {
+                        @include after_br(-66px, 0, 85px, 3px, $hover);
+                    }
+                }
+
+                a {
+                    padding: 10px 20px;
+                    border: 1px solid white;
+                    @include fs(#ffffff, 16px, 500, $ows);
+                    text-transform: uppercase;
+                    margin: 30px 12.5px 0;
+                    transition: all linear .3s;
+
+                    &:hover {
+                        background: $hover;
+                        border-color: $hover;
+                    }
+                }
+            }
+        }
+
+        .nxt_arr {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            background: #f54848;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 40%;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .prv_arr {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            background: #f54848;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 40%;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .slick-dots li button {
+            font-size: 0;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: 1px solid white;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .slick-dots {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+        }
+
+        .slick-dots .slick-active button {
+            background: #ff0000;
+            border: 1px solid red;
+        }
+    }
+}
+/*========================================================
+                    Banner Part End
+==========================================================*/

@@ -1,0 +1,56 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*========================================================
+                    Gallery Part Start
+==========================================================*/
+#gallery {
+    margin-bottom: 80px;
+    .gallery_head {
+        padding-bottom: 25px;
+        h2 {
+            @include fs($head, 22px, 400, $ows);
+            text-transform: uppercase;
+        }
+    }
+    .gallery_banner{
+        padding: 30px 0;
+        position: relative;
+        z-index: 1;
+        &::after{
+            @include after_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.8));
+            z-index: -1;
+        }
+        .gallery_img{
+            margin-bottom: 30px;
+            position: relative;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .overly{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                background: rgba(226, 62, 56, 0.5);
+                border: 5px solid rgba(255, 255, 255, 0.8);
+                transform: scale(0);
+                transition: all linear .3s;
+                a{
+                    @include middle();
+                    font-size: 30px;
+                    color: white;
+                    transition: all linear .3s;
+                }
+            }
+            &:hover .overly{
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+/*========================================================
+                    Gallery Part End
+==========================================================*/

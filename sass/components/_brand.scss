@@ -1,0 +1,74 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+
+/*========================================================
+                    Brand Slider Part Start
+==========================================================*/
+#brand {
+    padding-bottom: 80px;
+
+    .brand_slider {
+        position: relative;
+
+        .draggable {
+            padding: 10px 0 !important;
+        }
+
+        .slick-slide {
+            padding: 0 12px;
+        }
+
+        .slick-center {
+            img {
+                box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .nxt_arrw {
+            position: absolute;
+            right: -33px;
+            top: 48%;
+            // background: #f54848;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 40%;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 99;
+            font-size: 35px;
+            transition: all linear .3s;
+
+            &:hover {
+                color: $hover;
+            }
+        }
+
+        .prv_arrw {
+            position: absolute;
+            left: -35px;
+            top: 49%;
+            // background: #f54848;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 40%;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 99;
+            font-size: 35px;
+            transition: all linear .3s;
+
+            &:hover {
+                color: $hover;
+            }
+        }
+    }
+}
+
+/*========================================================
+                    Brand Slider Part End
+==========================================================*/

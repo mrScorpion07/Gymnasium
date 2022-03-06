@@ -1,0 +1,29 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*========================================================
+                    Membership Part Start
+==========================================================*/
+#count {
+    margin-bottom: 80px;
+    padding: 42px;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        @include after_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.8));
+        z-index: -1;
+    }
+
+    .counter_text {
+        h2{
+            @include fs(#ffffff, 40px, 700, $ows);
+        }
+        p{
+            @include fs(#ffffff, 16px, 400, $ows);
+        }
+    }
+}
+/*========================================================
+                   Membership Part End
+==========================================================*/
